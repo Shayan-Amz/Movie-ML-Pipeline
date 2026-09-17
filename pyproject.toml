@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "movie-pipeline"
+version = "1.0.0"
+description = "Scrape, clean and recommend Iranian cinema releases (1392–1403 SH) — an end-to-end data pipeline with a Streamlit recommender."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Shayan Amouzadeh", email = "shayanamz.7687@gmail.com" }]
+keywords = ["data-pipeline", "web-scraping", "pandas", "recommender-system", "streamlit", "iranian-cinema"]
+dependencies = [
+    "pandas>=2.0",
+    "beautifulsoup4>=4.12",
+]
+
+[project.optional-dependencies]
+app = ["streamlit>=1.30"]
+dev = ["pytest>=7", "ruff>=0.4"]
+
+[project.urls]
+Repository = "https://github.com/Shayan-Amz/Movie-ML-Pipeline"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
