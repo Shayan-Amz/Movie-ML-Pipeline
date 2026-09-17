@@ -1,4 +1,0 @@
-﻿ pip install webdriver_manager
-pip install selenium
-pip install streamlit       
-streamlit run .\part_3.py
